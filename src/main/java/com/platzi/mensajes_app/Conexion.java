@@ -15,7 +15,8 @@ import java.sql.SQLException;
  */
 public class Conexion {
     private static  Connection connection;
-    public static Connection get_connection(){
+    public static Connection get_connection() throws ClassNotFoundException {
+        Class.forName("org.postgresql.Driver");
         final String URL = "jdbc:postgresql://192.168.1.9/Persistence_database_java"; 
         final String USER = "postgres";
         final String PASSWORD= "postgres";

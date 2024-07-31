@@ -22,7 +22,7 @@ public class mensajeService {
         MensajeDAO.crearMensajeDB(new Mensajes(mensaje,autorMensaje));
     }
 
-    public static void listarMensajes() throws SQLException {
+    public static void listarMensajes() throws SQLException, ClassNotFoundException {
         MensajeDAO.leerMensajesDB();
     }
 
@@ -32,7 +32,7 @@ public class mensajeService {
          MensajeDAO.borrarMensajeDB(id);
     }
 
-    public static void editarMensaje() throws SQLException {
+    public static void editarMensaje() throws SQLException, ClassNotFoundException {
         System.out.println("Ingrese el Id del mensaje que quiere actualizar");
         int id = sc.nextInt();
           sc.nextLine();
