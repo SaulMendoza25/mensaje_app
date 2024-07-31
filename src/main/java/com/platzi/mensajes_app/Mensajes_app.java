@@ -25,16 +25,15 @@ public class Mensajes_app {
             System.out.println("5._ Salir");
             opcion = sc.nextInt();
             switch(opcion){
-                case 1 : mensajeService.listarMensajes();
-                break;
-                case 2 : mensajeService.crearMensaje(); break;
-                case 3 : mensajeService.editarMensaje();break;
-                case 4 : mensajeService.borrarMensaje();break;
-                case 5 :
+                case 1 -> mensajeService.listarMensajes();
+                case 2 -> mensajeService.crearMensaje();
+                case 3 -> mensajeService.editarMensaje();
+                case 4 -> mensajeService.borrarMensaje();
+                case 5 -> {
                     System.out.println("Gracias por usar nuetro aplicacion Domo arigato");
                     opcion=5;
-
-                default : System.out.println("La opcion que eligion no es valida intente otra vez por favor");
+                }
+                default -> System.out.println("La opcion que eligion no es valida intente otra vez por favor");
             }
         }while(opcion !=5);
               
