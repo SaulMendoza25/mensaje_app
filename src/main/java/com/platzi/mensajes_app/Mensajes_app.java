@@ -12,7 +12,7 @@ import java.util.Scanner;
  */
 public class Mensajes_app {
 
-    public static void main(String[] args) throws SQLException, ClassNotFoundException {
+    public static void main(String[] args) throws SQLException {
         Scanner sc = new Scanner(System.in);
         int opcion;
         do{

@@ -27,12 +27,10 @@ public class MensajeDAO {
             if (RowUpdate > 0) {
                 System.out.println("Ingreso de datos satisfactorio");
             }
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
     }
 
-    public static void leerMensajesDB() throws SQLException, ClassNotFoundException {
+    public static void leerMensajesDB() throws SQLException {
         try (Connection conexion = Conexion.get_connection(); Statement stat = conexion.createStatement()) {
             List<Mensajes> mensajes = new ArrayList<>();
             try (ResultSet result = stat.executeQuery("Select * from mensajes")) {
@@ -56,12 +54,10 @@ public class MensajeDAO {
             } else {
                 System.out.println("Registro no encontrado en la base de datos");
             }
-        } catch (ClassNotFoundException e) {
-            throw new RuntimeException(e);
         }
     }
 
-    public static void actualizarMensajeDB(Mensajes mensaje, String confirmacion) throws SQLException, ClassNotFoundException {
+    public static void actualizarMensajeDB(Mensajes mensaje, String confirmacion) throws SQLException {
         if (confirmacion.equalsIgnoreCase("yes")) {
             try (Connection conexion = Conexion.get_connection(); PreparedStatement stat = conexion.prepareStatement("UPDATE mensajes set mensaje=?,autor_mensaje=?   where id_mensaje =?")) {
                 stat.setString(1, mensaje.getMensaje());

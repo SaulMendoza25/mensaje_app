@@ -14,13 +14,11 @@ import java.sql.SQLException;
  * @author saul
  */
 public class Conexion {
-    private static  Connection connection;
-    public static Connection get_connection() throws ClassNotFoundException {
-        Class.forName("org.postgresql.Driver");
+    public static Connection get_connection(){
         final String URL = "jdbc:postgresql://192.168.1.9/Persistence_database_java"; 
         final String USER = "postgres";
         final String PASSWORD= "postgres";
-        connection =null;
+        Connection connection = null;
         if(connection ==null){
         try{
             connection = DriverManager.getConnection(URL, USER, PASSWORD);
